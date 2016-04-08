@@ -7,7 +7,7 @@
     <title>Map</title>
 
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="/leaflet.css" />
     <style media="screen">
       body {
           padding: 0;
@@ -32,7 +32,7 @@
     <div id="map"></div>
     <div class="digital-globe-image"></div>
 
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
     <script type="text/javascript">
 
     var MAPBOX_MAP_ID = 'mapbox.satellite'
@@ -40,6 +40,8 @@
 
     var mymap = L.map('map').setView([51.505, -0.09], 13);
 
+
+    // Display base map
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
@@ -47,16 +49,10 @@
         accessToken: MAPBOX_API_TOKEN
     }).addTo(mymap);
 
-    var marker = L.marker([51.5, -0.09]).addTo(mymap);
-
-    var circle = L.circle([39, -104], 500, {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(mymap);
-
+    // Listen for clicks
     mymap.on('click', function(event) {
-      console.log(event.latlng)
+
+      // Create Digital Globe image url based on click location
       var latitude = event.latlng.lat
       var longitude = event.latlng.lng
 
@@ -74,8 +70,6 @@
         ')'
       ].join('')
 
-      console.log(background);
-
       // Display the overlay
       $('.digital-globe-image')
         .show()
@@ -83,10 +77,7 @@
       // Set bg of overlay to the DigitalGlobe image of the current location
       $('.digital-globe-image')
         .css('background', background)
-
-
-
-    })
+      })
 
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
