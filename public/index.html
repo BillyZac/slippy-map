@@ -35,11 +35,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
     <script type="text/javascript">
 
-    var MAPBOX_MAP_ID = 'mapbox.satellite'
+    var MAPBOX_MAP_ID = 'mapbox.mapbox-streets-v7'
     var MAPBOX_API_TOKEN = 'pk.eyJ1IjoiYmlsbHl6YWMiLCJhIjoiY2ltczZ4em84MDFmNXVya2tra3YwZm9pcCJ9.xIziBomXWsiSMYhe2naLng'
 
-    var mymap = L.map('map').setView([51.505, -0.09], 13);
+    var middleOfTheAtlanticOceanCoordinates = [34.016241889667015, -18.28125]
 
+    var mymap = L.map('map').setView(middleOfTheAtlanticOceanCoordinates, 3)
 
     // Display base map
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
