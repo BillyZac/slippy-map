@@ -5,52 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Map</title>
-
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="/leaflet.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <style media="screen">
-      body {
-          padding: 0;
-          margin: 0;
-      }
-      html, body, #map {
-          height: 100%;
-      }
-      .digital-globe-image {
-        width: 600px;
-        height: 600px;
-        border: 5px solid #ddd;
-        display: none;
-        display: flex;
-        justify-content: flex-end;
-      }
-      .lightbox {
-        width: 100%;
-        height: 100%;
-        background: hsla(360, 100%, 0%, 0.7);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 99;
-        display: none;
-      }
-      .show-lightbox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .close-lightbox {
-        color: #ddd;
-        font-size: 30px;
-        margin: 10px;
-      }
-      .close-lightbox:hover {
-        transform: rotate(180deg);
-        color: #fff;
-        transition: 0.2s ease;
-      }
-    </style>
+    <link rel="stylesheet" href="/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
     <div class="lightbox">
@@ -60,61 +17,8 @@
     </div>
     <div id="map"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript">
-      var MAPBOX_MAP_ID = 'mapbox.mapbox-streets-v7'
-      var MAPBOX_API_TOKEN = 'pk.eyJ1IjoiYmlsbHl6YWMiLCJhIjoiY2ltczZ4em84MDFmNXVya2tra3YwZm9pcCJ9.xIziBomXWsiSMYhe2naLng'
-
-      var middleOfTheAtlanticOceanCoordinates = [34.016241889667015, -18.28125]
-
-      var mymap = L.map('map').setView(middleOfTheAtlanticOceanCoordinates, 3)
-
-      // Display base map
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-          maxZoom: 18,
-          id: MAPBOX_MAP_ID,
-          accessToken: MAPBOX_API_TOKEN
-      }).addTo(mymap);
-
-      // Listen for clicks
-      mymap.on('click', function(event) {
-        // Create Digital Globe image url based on click location
-        var latitude = event.latlng.lat
-        var longitude = event.latlng.lng
-        var imageUrl = [
-          'http://mapperdev.tomnod.com/chip_api/chip',
-          '/lat/',
-          latitude,
-          '/lng/',
-          longitude
-        ].join('')
-        var background = [
-          'url(',
-          imageUrl,
-          ')'
-        ].join('')
-
-        // Display the overlay
-        $('.lightbox')
-          .toggleClass('show-lightbox')
-
-        // Set bg of overlay to the DigitalGlobe image of the current location
-        $('.digital-globe-image')
-          .show()
-          .css('background', background)
-
-      }) // End mymap.on click handler
-
-      // Close the lightbox on clicking the X
-      $('.close-lightbox').on('click', function() {
-        console.log('clik');
-        $('.lightbox')
-          .toggleClass('show-lightbox')
-      })
-
-    </script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script> -->
+    <script src="/leaflet/leaflet.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

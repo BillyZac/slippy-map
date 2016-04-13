@@ -1,0 +1,40 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+}
+.digital-globe-image {
+  width: 600px;
+  height: 600px;
+  border: 5px solid #ddd;
+  display: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.lightbox {
+  width: 100%;
+  height: 100%;
+  background: hsla(360, 100%, 0%, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: none;
+}
+.show-lightbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-lightbox {
+  color: #ddd;
+  font-size: 30px;
+  margin: 10px;
+}
+.close-lightbox:hover {
+  transform: rotate(180deg);
+  color: #fff;
+  transition: 0.2s ease;
+}

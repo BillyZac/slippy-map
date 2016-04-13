@@ -1,0 +1,22 @@
+{
+  "name": "slippy-map",
+  "description": "Look around at this big old Earth. Click a spot, and see the latest satellite imagery at that point.",
+  "main": "index.js",
+  "authors": [
+    "Zachary Smith <billyzacsmith@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/BillyZac/slippy-map",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "components-font-awesome": "^4.5.0"
+  }
+}
