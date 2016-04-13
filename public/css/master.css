@@ -13,6 +13,7 @@ html, body, #map {
   display: none;
   display: flex;
   justify-content: flex-end;
+  border-radius: 15px;
 }
 .lightbox {
   width: 100%;
@@ -49,6 +50,11 @@ header {
   padding: 0 50px;
 }
 
+header h1 {
+  font-size: 1rem;
+  color: #5484A7;
+}
+
 .leaflet-top .leaflet-control {
-  margin-top: 100px;
+  margin-top: 80px;
 }
