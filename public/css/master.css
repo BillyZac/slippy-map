@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 html, body, #map {
     height: 100%;
@@ -37,4 +38,17 @@ html, body, #map {
   transform: rotate(180deg);
   color: #fff;
   transition: 0.2s ease;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background: hsla(360, 100%, 100%, 0.5);
+  display: flex;
+  padding: 0 50px;
+}
+
+.leaflet-top .leaflet-control {
+  margin-top: 100px;
 }

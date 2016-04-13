@@ -1,4 +1,4 @@
-var MAPBOX_MAP_ID = 'mapbox.mapbox-streets-v7'
+var MAPBOX_MAP_ID = 'mapbox.streets'
 var MAPBOX_API_TOKEN = 'pk.eyJ1IjoiYmlsbHl6YWMiLCJhIjoiY2ltczZ4em84MDFmNXVya2tra3YwZm9pcCJ9.xIziBomXWsiSMYhe2naLng'
 
 var middleOfTheAtlanticOceanCoordinates = [34.016241889667015, -18.28125]
